@@ -1,0 +1,23 @@
+{
+	"LZ": {
+		"prefix": "svue",
+		"body": [
+			" <div id=\"app\">",
+			"    <h1>{{message}}</h1>",
+			"    <h2>{{name}}</h2>",
+			"  </div>",
+			"  <script src=\"../js/vue.js\"> </script>",
+			"  <script>",
+			"    const app = new Vue({",
+			"      el: \"#app\",",
+			"      data: {",
+			"        message: '你好,李银河!',",
+			"        name: '磊子'",
+			"      }",
+			"    })",
+			"  </script>"
+		],
+		"description": "create example sample vue"
+	}
+}
+

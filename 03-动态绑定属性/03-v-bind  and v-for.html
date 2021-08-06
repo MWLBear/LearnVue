@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .active {
+    color: red;
+  }
+</style>
+
+<body>
+  <div id="app">
+    <ul>
+      <!-- <li @click="handle" :class="getClass()" v-for="item in movies">{{item}}</li> -->
+      <li v-for="(item, index) in movies" :class="{ 'active': activeIndex === index}" @click="activate(index)">{{item}}</li>
+    </ul>
+  </div>
+  <script src="../js/vue.js"> </script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        movies: [
+          '星际穿越',
+          '大话西游',
+          '盗梦空间',
+          '少年派'
+        ],
+        activeIndex: -1,
+      },
+      methods: {
+        handle() {
+          console.log("点击");
+          this.isActive = !this.isActive
+        },
+        activate(index) {
+          console.log(index);
+          this.activeIndex = index
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>

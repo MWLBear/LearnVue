@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h1 v-bind:class="{active:isActive,line:isLine}">{{message}}</h1>
+    <h1 v-bind:class="getClass()">{{message}}</h1>
+
+    <h2 :class="[active,line]">{{message}}</h2>
+    <h2 :class="getClass1()">{{message}}</h2>
+    <button v-on:click="handle">点击</button>
+  </div>
+  <script src="../js/vue.js"> </script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: '我是谁!',
+        isActive: true,
+        isLine: true,
+        active: "active",
+        line: "line"
+      },
+      methods: {
+        handle: function () {
+          this.isActive = !this.isActive;
+        },
+        getClass: function () {
+          return { active: this.isActive, line: this.isLine }
+        },
+        getClass1: function () {
+          return [this.active, this.line]
+        }
+
+      },
+    })
+  </script>
+</body>
+
+</html>
